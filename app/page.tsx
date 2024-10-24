@@ -1,6 +1,6 @@
 import { PlayList } from "./_components/PlayList";
 
-export default async function Home() {
+export default function Home() {
 
   return (
     <div className="w-full h-full min-h-dvh flex justify-center items-center bg-gradient-to-t from-stone-300 via-stone-300 to-stone-200">

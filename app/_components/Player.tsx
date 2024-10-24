@@ -1,10 +1,8 @@
 import { PlayerSingle } from "./PlayerSingle";
-import { librengexperimento } from "../_data/albums";
+import { librengexperimento } from "../_data/playlists";
 
 export default async function Player() {
-
-  const playlist = await librengexperimento;
-
+  const playlist = await librengexperimento.songs;
   return (
     <div className="w-full grid grid-cols-12 gap-x-4 gap-y-4 md:gap-y-8">
       {

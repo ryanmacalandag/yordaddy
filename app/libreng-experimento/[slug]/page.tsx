@@ -5,14 +5,18 @@ import Link from 'next/link';
 import { RiHomeLine, RiPlayListLine } from 'react-icons/ri';
 
 export async function generateStaticParams() {
-  return librengexperimento.songs.map((s) => ({
-    slug: s.slug,
+  const songs = ['maglipay','sala-ba-diay']
+  return songs.map((s) => ({
+    slug: s,
   }))
 }
 
-export default async function Page( { params }: { params: {slug:string }}  ) {
+type ParamsType = Promise <{slug: string}>
+
+export default async function Page({ params }: { params: ParamsType }) {
   const { slug } = await params;
-  const song = await librengexperimento.songs.find((s) => s.slug == slug);
+  const songs = await librengexperimento.songs;
+  const song = await songs.find((s) => s.slug == slug);
 
   return (
     <div className="w-full h-full min-h-dvh flex justify-center items-center bg-gradient-to-t from-stone-400 via-stone-200 to-stone-200">
